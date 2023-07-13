@@ -1,6 +1,12 @@
-const Cell = ({ id, cell, setCells, go, setGo, cells, winningMsg }) => {
+import { useState } from "react"
+
+const Cell = ({ id, cell, setCells, go, setGo, cells, winningMsg, turn, setTurn }) => {
+
+    const [clickEnabled, setClickEnabled] = useState(true)
+
 
     const handleClick = (e) => {
+        setTurn(turn + 1)
         const taken =
             e.target.firstChild.classList.contains('circle') || 
             e.target.firstChild.classList.contains('cross')
@@ -17,6 +23,7 @@ const Cell = ({ id, cell, setCells, go, setGo, cells, winningMsg }) => {
                 setGo('circle')
             }
         }
+        setClickEnabled(false)
     }
 
     const handleCellChange = (className) => {
@@ -35,7 +42,7 @@ const Cell = ({ id, cell, setCells, go, setGo, cells, winningMsg }) => {
         <div
             className="square"
             id={id}
-            onClick={!winningMsg ? handleClick : null}
+            onClick={clickEnabled && !winningMsg ? handleClick : null}
         >
             <div className={cell}></div>
         </div>

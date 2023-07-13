@@ -8,6 +8,7 @@
   height: 100vh;
   flex-direction: column;
 }
+
 .gameboard {
   width: 300px;
   height: 300px;
@@ -39,21 +40,41 @@
   width: 90px;
   position: relative;
 }
-.cross:before, .cross:after {
+
+.cross:before,
+.cross:after {
   content: '';
   position: absolute;
   background-color: red;
   transform: rotate(45deg);
 }
+
 .cross:before {
   left: 50%;
   width: 30%;
   margin-left: -15%;
   height: 100%;
 }
+
 .cross:after {
   top: 50%;
   height: 30%;
   margin-top: -15%;
   width: 100%;
+}
+
+#info {
+  margin: 30px;
+  font-size: 18px;
+}
+
+#resetBtn {
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: green;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
