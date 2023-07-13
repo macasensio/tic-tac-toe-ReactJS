@@ -10,5 +10,3 @@
 - useState()
 - useEffect()
 
-#### GitHub Page
-[]()
